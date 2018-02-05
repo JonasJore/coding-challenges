@@ -1,5 +1,6 @@
 /**
  *  Description: bubble sort algorithm from scratch
+ *  
  *  Name: Jonas Jore
  *  Date: 19/01/18
 */
@@ -22,6 +23,7 @@ void bubble_sort(int arr[],size_t size){
   }
 }
 
+
 void print_arr(int arr[],size_t size){
   std::cout << "{ ";
   for(int i = 0; i < size; i++){
@@ -38,6 +40,7 @@ void print_arr(int arr[],size_t size){
 
 
 int main() {
+  //completely random number values for the int arr for testing purposes
   int arr[] = {33,1,689,42,17,50,101,99};
   size_t size = 8;
   std::cout << "Unsorted: " << std::endl;
