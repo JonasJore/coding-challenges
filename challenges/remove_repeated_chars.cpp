@@ -1,3 +1,7 @@
+/**
+ * Removes repeating chars in a string, returning the normal version of a word
+ * 
+*/
 #include <iostream>
 using namespace std;
 
