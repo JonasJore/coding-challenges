@@ -19,6 +19,7 @@ var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var score = 0;
 var extraLives = 3;
+
 var bricks = [];
 
 for(i = 0; i < brickColumns; i++) {
@@ -54,7 +55,7 @@ function collisionDetection() {
             if(b.status == 1) {
                 if(x > b.x && x < b.x + brickwWidth && y > b.y && y < b.y + brickHeight) {
                     dy = -dy;
-                    platformWidth -= 5; //platformen blir 5px mindre for hvert mål du treffer.
+                    platformWidth -= 5; // platformen blir 5px mindre for hvert mål du treffer.
                     b.status = 0;
                     score += 10;
                     if((score / 10) == brickRows * brickColumns) {
