@@ -102,7 +102,7 @@ function drawBricks() {
             if(bricks[i][j].status == 1){
                 var brickX = (i * (brickwWidth + brickPadding)) + brickOffsetLeft;
                 var brickY = (j * (brickHeight + brickPadding)) + brickOffsetTop;
-                bricks[i][j].x = brickX;
+                bricks[i][j].x= brickX;
                 bricks[i][j].y = brickY;
                 ctx.beginPath();
                 ctx.rect(brickX, brickY, brickwWidth, brickHeight);
@@ -126,7 +126,16 @@ function drawExtraLives() {
     ctx.fillText("Ekstra liv: " + extraLives, canvas.width - 100, 20);
 }
 
-function resetIfBallHitsFloor() {
+function gameController() {
+    drawBall();
+    drawplatform();
+    drawBricks();
+    drawScore();
+    drawExtraLives();
+    collisionDetection();
+    
+    moveThePlatform();
+
     if(x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
         dx = -dx;
     } if(y + dy < ballRadius) {
@@ -148,17 +157,6 @@ function resetIfBallHitsFloor() {
             }
         }
     } 
-}
-
-function gameController() {
-    drawBall();
-    drawplatform();
-    drawBricks();
-    drawScore();
-    drawExtraLives();
-    collisionDetection();
-    resetIfBallHitsFloor();
-    moveThePlatform()
 }
 
 function draw() {
