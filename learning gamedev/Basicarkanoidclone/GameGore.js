@@ -1,4 +1,4 @@
-var canvas = document.getElementById("myCanvas");
+var canvas = document.getElementById("gameBoard");
 var ctx = canvas.getContext("2d");
 var x = canvas.width / 2;
 var y = canvas.height - 30;
@@ -48,6 +48,17 @@ function keyUpHandler(e) {
     }
 }
 
+function moveThePlatform() {
+    if(rightIsPressed && platformX < canvas.width - platformWidth) {
+        platformX += 7;
+    } else if(leftIsPressed && platformX > 0) {
+        platformX -= 7;
+    }
+
+    x += dx;
+    y += dy;
+}
+
 function collisionDetection() {
     for(i = 0; i < brickColumns; i++) {
         for(j = 0; j < brickRows; j++) {
@@ -56,6 +67,7 @@ function collisionDetection() {
                 if(x > b.x && x < b.x + brickwWidth && y > b.y && y < b.y + brickHeight) {
                     dy = -dy;
                     platformWidth -= 5; // platformen blir 5px mindre for hvert mål du treffer.
+                    //dy++; speeds up the ball when it hit a brick!
                     b.status = 0;
                     score += 10;
                     if((score / 10) == brickRows * brickColumns) {
@@ -114,15 +126,7 @@ function drawExtraLives() {
     ctx.fillText("Ekstra liv: " + extraLives, canvas.width - 100, 20);
 }
 
-function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBall();
-    drawplatform();
-    drawBricks();
-    drawScore();
-    drawExtraLives();
-    collisionDetection();
-
+function resetIfBallHitsFloor() {
     if(x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
         dx = -dx;
     } if(y + dy < ballRadius) {
@@ -144,15 +148,23 @@ function draw() {
             }
         }
     } 
+}
 
-    if(rightIsPressed && platformX < canvas.width - platformWidth) {
-        platformX += 7;
-    } else if(leftIsPressed && platformX > 0) {
-        platformX -= 7;
-    }
+function gameController() {
+    drawBall();
+    drawplatform();
+    drawBricks();
+    drawScore();
+    drawExtraLives();
+    collisionDetection();
+    resetIfBallHitsFloor();
+    moveThePlatform()
+}
 
-    x += dx;
-    y += dy;
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    gameController();
 
     requestAnimationFrame(draw);
 }
