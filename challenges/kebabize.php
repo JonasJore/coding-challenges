@@ -17,5 +17,3 @@ function kebabize($string) {
   $charArr = implode($charArr);
   return ltrim($charArr,'-');
 }
-
-?>
