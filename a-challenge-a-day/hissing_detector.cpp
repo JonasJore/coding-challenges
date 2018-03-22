@@ -11,7 +11,7 @@ std::string hiss_detector(std::string s){
 
 int main(){
   std::string input;
-  std::cin>>input;
+  std::cin >> input;
   std::cout << hiss_detector(input) << std::endl;
   return 0;
 }
