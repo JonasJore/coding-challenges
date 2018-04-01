@@ -1,3 +1,8 @@
+
+//TODO: the values are pushed to the back of the vector. 
+//have to iterate backwards through the vector to print the tower properly.
+//Solve this later
+
 #include <iostream>
 #include <vector>
 
