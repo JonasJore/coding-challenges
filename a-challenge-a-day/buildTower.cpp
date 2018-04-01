@@ -9,9 +9,9 @@
 std::vector<std::string> buildTower(int floors) {
   std::vector<std::string> arr;
   std::string spacing = "";
-  for(int i = floors; i > 0; i--) {
+  for(int i = floors; i >= 0; i--) {
     std::string star = "*";
-    for(int j = i-1; j > 0; j--) {
+    for(int j = i-1; j >= 0; j--) {
       star += "**";
     }
     star = spacing + star + spacing;
@@ -28,5 +28,5 @@ void printTower(std::vector<std::string> towerVector) {
 }
 
 int main() {
-  printTower(buildTower(6));
+  printTower(buildTower(1));
 }
