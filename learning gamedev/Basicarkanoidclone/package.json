@@ -1,0 +1,14 @@
+{
+  "name": "arkanoidclone",
+  "version": "1.0.0",
+  "description": "An Arkanoid clone built with core javascript and wrapped as a native desktop app with electronjs ",
+  "main": "wrapper.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "WorshipTheSofa",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^2.0.3"
+  }
+}
