@@ -17,7 +17,7 @@ class Main {
       set.add(c);
     }
 
-    return (set.size() == 26) ? true : false;
+    return (set.size() == 26);
   }
 
 }
