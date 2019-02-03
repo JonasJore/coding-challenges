@@ -16,7 +16,7 @@ public class CamelCaseConverter {
   public static String camelCase(String str) {
     List<String> split = Arrays.asList(str.split(" "));
     List<String> collect = split.stream()
-        .filter(s -> !s.isEmpty() || s == null)
+        .filter(s -> !s.isEmpty() || s != null)
         .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
         .collect(Collectors.toList());
 
