@@ -3,7 +3,6 @@
  * ended up using a bubble sort technique because it was the fastest for me to write
  *
  * @link: https://www.codewars.com/kata/custom-sort-function
- 
  * date: 12.02.19
  */
 let sort = (items) => {
