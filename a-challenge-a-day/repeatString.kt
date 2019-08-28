@@ -1,3 +1,1 @@
-class Challenge {
-    fun repeatStr(r: Int, str: String) : String = str.repeat(r)
-}
+fun repeatStr(r: Int, str: String) : String = str.repeat(r)
