@@ -26,8 +26,10 @@ def high(x):
 
 def getScoreForWord(word):
   currentScore = 0
+
   for i in range(0, len(word)):
       currentScore += scoreList[word[i]]
+
   return currentScore
 
 
