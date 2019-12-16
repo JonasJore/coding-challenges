@@ -1,32 +1,35 @@
 from readInputFile import readInput
 
-# under construction
+def getInput():
+  input = readInput('./input/dec_02-part-2.txt')[0].split(',')
+  return list(map(int, input))
 
-correct = False
+def opcodeComputer(op):
+  for i in range(0, len(op) - 1, 4):
+    if (op[i] == 1):
+      op[op[i + 3]] = op[op[i + 1]] + op[op[i + 2]]
+    elif (op[i] == 2):
+      op[op[i + 3]] = op[op[i + 1]] * op[op[i + 2]]
+    elif (op[i] == 99):
+      return op[0]
+      break
+  return None
 
-while not correct:
-  for i in range(0,100):
-    for j in range(0,100):
-      fileContent = readInput('./input/input_011219_03.txt')
+def findNumberOfNounsAndVerbs():
+  for noun in range(0,100):
+    for verb in range(0,100):
+      input = getInput()
 
-      opCodes = fileContent[0].split(',')
+      input[1] = noun
+      input[2] = verb
+      result = opcodeComputer(input)
 
-      for i in range(0, len(opCodes)):
-        opCodes[i] = int(opCodes[i])
+      print(result)
 
-      opCodes[1] = i
-      opCodes[2] = j
+      if result == 19690720:
+        return 100 * noun + verb
 
-      for i in range(0, len(opCodes)-1, 4):
-        if (opCodes[i] == 1):
-          opCodes[opCodes[i + 3]] = opCodes[opCodes[i + 1]] + opCodes[opCodes[i + 2]]
-        elif (opCodes[i] == 2):
-          opCodes[opCodes[i + 3]] = opCodes[opCodes[i + 1]] * opCodes[opCodes[i + 2]] 
-        elif (opCodes[i] == 99):
-          break
+  print("nothing found")
 
-      print(opCodes[0])
 
-      if(opCodes[0] == 19690720):
-        correct = True
-        print("to obtain the output of 19690720 are " + str(i) + " and " + str(j))
+findNumberOfNounsAndVerbs()

@@ -4,7 +4,7 @@ from readInputFile import readInput
 def fuelRequired(moduleMass):
   return math.floor(moduleMass / 3) - 2
 
-inputList = readInput('./input/input_011219_01.txt')
+inputList = readInput('./input/dec_01-part-1.txt')
 
 sum = 0
 
