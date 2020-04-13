@@ -2,7 +2,7 @@ import math
 from readInputFile import readInput
 from dec01_01 import fuelRequired
 
-fileLine = readInput('./input/input_011219_02.txt')
+fileLine = readInput('./input/dec_01-part-1.txt')
 
 sum = 0
 for module in fileLine:

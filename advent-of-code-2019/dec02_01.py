@@ -1,6 +1,6 @@
 from readInputFile import readInput
 
-fileContent = readInput('./input/input_011219_03.txt')
+fileContent = readInput('./input/dec_02-part-1.txt')
 
 opCodes = fileContent[0].split(',')
 
