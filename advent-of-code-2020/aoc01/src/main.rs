@@ -1,5 +1,4 @@
 use std::io::{ self, Read };
-
 type Res<T> = ::std::result::Result<T, Box<dyn ::std::error::Error>>;
 
 fn parse_file(input: &str) -> Result<Vec<u32>, ::std::num::ParseIntError> {
@@ -9,6 +8,7 @@ fn parse_file(input: &str) -> Result<Vec<u32>, ::std::num::ParseIntError> {
             number.parse::<u32>()
         }).collect()
 }
+
 
 fn main() -> Res<()> {
     let mut input = String::new();
@@ -30,20 +30,20 @@ fn part1(vec: &Vec<u32>) -> u32 {
             }
         }
     }
-    0
+    return 0;
 }
 
 fn part2(vec: &Vec<u32>) -> u32 {
-    for i in 0..vec.len() {
-        for j in i + 1..vec.len() {
-            for k in j+1..vec.len() {
+    for i in 0..vec.len()-1 {
+        for j in i..vec.len()-2 {
+            for k in j+1..vec.len()-3 {
                 if vec[i] + vec[j] + vec[k] == 2020 {
                     return vec[i] * vec[j] * vec[k];
                 }
             }
         }
     }
-    0
+    return 0;
 }
 
 
