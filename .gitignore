@@ -1,2 +1,5 @@
+#rust 
+target/
+#editor
 .vscode
 __pycache__/
