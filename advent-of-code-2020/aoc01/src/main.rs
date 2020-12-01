@@ -1,4 +1,5 @@
 use std::io::{ self, Read };
+use std::collections::HashSet;
 type Res<T> = ::std::result::Result<T, Box<dyn ::std::error::Error>>;
 
 fn parse_file(input: &str) -> Result<Vec<u32>, ::std::num::ParseIntError> {
@@ -23,14 +24,15 @@ fn main() -> Res<()> {
 }
 
 fn part1(vec: &Vec<u32>) -> u32 {
+    let mut seen: HashSet<u32> = HashSet::new();
+    let mut answer = 0;
     for i in 0..vec.len() {
-        for j in i + 1..vec.len() {
-            if vec[i] + vec[j] == 2020 {
-                return vec[i] * vec[j];
-            }
+        seen.insert(vec[i]);
+        if seen.contains(&(2020 - vec[i])) {
+            answer = vec[i] * (2020 - vec[i]);
         }
     }
-    return 0;
+    answer
 }
 
 fn part2(vec: &Vec<u32>) -> u32 {
