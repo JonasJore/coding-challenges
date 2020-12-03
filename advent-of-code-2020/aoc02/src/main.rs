@@ -3,6 +3,7 @@ use regex::Regex;
 use std::convert::TryFrom;
 
 type Res<T> = ::std::result::Result<T, Box<dyn ::std::error::Error>>;
+
 struct PasswordLine {
     min: u32,
     max: u32,
@@ -19,9 +20,7 @@ impl PasswordLine {
 }
 
 fn parse_file(input: &str) -> Vec<&str> {
-    input
-        .lines()
-        .collect()
+    input.lines().collect()
 }
 
 fn main() -> Res<()> {
