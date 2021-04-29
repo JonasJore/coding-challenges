@@ -6,4 +6,5 @@ def circle_area(r):
         return False
     if r < 1:
         return False
-    return round(math.pi * (round(r, 2)**2), 2)
+    area = round(math.pi * (round(r, 2)**2), 2)
+    return area
