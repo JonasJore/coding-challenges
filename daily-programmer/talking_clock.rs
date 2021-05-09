@@ -3,7 +3,7 @@ use std::collections::HashMap;
 
 struct Clock<'a> {
     hours: &'a str,
-    minutes: &'a str
+    minutes: &'a str,
 }
 
 fn main() {
@@ -65,17 +65,25 @@ fn main() {
 
     let input_split: Vec<&str> = input.split(':').collect();
 
-    let clock = Clock {hours: &input_split[0], minutes: &input_split[1] };
+    let clock = Clock {
+        hours: &input_split[0],
+        minutes: &input_split[1],
+    };
 
     let hours_as_int = clock.hours.parse::<i32>().unwrap();
+
+    let parsed_hours = match hours_as_int {
+        hour if hour > 12 => Some(hours_map[&format!("0{}", (hour - 12)).to_string().as_str()]),
+        hour if hour == 0 => Some(hours_map[(hour + 12).to_string().as_str()]),
+        _ => None,
+    };
 
     // hele klokkeslett er første case
     // deretter klokkeslett som It's one thirty am
     // også dette it's twelve thirty four am (kombinerer både tier og enkeltminutt)
 
-    let am_pm = if hours_as_int < 12 {
-        "am"
-    } else {
-        "pm"
-    };
+    let am_pm = if hours_as_int < 12 { "am" } else { "pm" };
+
+    // happycase covered!
+    println!("It's {} {}", parsed_hours.unwrap(), am_pm);
 }
