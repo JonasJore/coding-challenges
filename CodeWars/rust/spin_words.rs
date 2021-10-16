@@ -16,10 +16,14 @@ fn spin_words(words: &str) -> String {
 
 // these match expressions are so clean!
 fn spin_words_match(words: &str) -> String {
-  return words.split_ascii_whitespace().map(|word| match word.len() >= 5 {
-    true => word.chars().rev().collect(),
-    false => word.to_string()
-  }).collect::<Vec<String>>().join(" ");
+    return words
+        .split_ascii_whitespace()
+        .map(|word| match word.len() >= 5 {
+            true => word.chars().rev().collect(),
+            false => word.to_string(),
+        })
+        .collect::<Vec<String>>()
+        .join(" ");
 }
 
 fn main() {
