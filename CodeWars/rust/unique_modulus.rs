@@ -9,7 +9,10 @@ fn unique_modulus_solution(vector: &Vec<i32>) -> bool {
     })
     .collect::<HashSet<i32>>();
 
-  println!("unique modulus-numbers: {}", unique_modulus_numbers.len());
+  println!(
+    "unique modulus-numbers: {}", 
+    unique_modulus_numbers.len()
+  );
 
   vector.len() == unique_modulus_numbers.len()
 }
