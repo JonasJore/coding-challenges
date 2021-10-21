@@ -1,9 +1,27 @@
 //https://www.codewars.com/kata/514b92a657cdc65150000006/train/java
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-
 public class Solution {
+
+  public static void main(String[] args) {
+		new Solution().tester();
+	}
+
+	private void tester() {
+		Scanner sc = new Scanner(System.in);
+		int tests = sc.nextInt();
+		for(int i = 0; i < tests; i++) {
+			int inputTests = sc.nextInt();
+			int sum = solution(inputTests);
+			System.out.println(checker(inputTests, sum));
+		}
+	}
+
+  private String checker(int inp, int sum) {
+		if((inp == 10 && sum == 23) || (inp == 16 && sum == 60)) {
+			return "Yes";
+		} 
+		return "No";
+	}
 
   public int solution(int number) {
     int sum = 0;
@@ -14,12 +32,4 @@ public class Solution {
     }
     return(sum);
   }
-}
-
-public class SolutionTest {
-    @Test
-    public void test() {
-      assertEquals(23, new Solution().solution(10));
-      assertEquals(60, new Solution().solution(16));
-    }
 }
