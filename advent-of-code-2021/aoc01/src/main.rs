@@ -17,7 +17,6 @@ fn count_increased_depths<N: PartialOrd>(vec: &[N]) -> i32 {
         if index > 0 {
             if current > &vec[index - 1] {
                 count_of_increases += 1;
-            } else {
             }
         } else {
         }
