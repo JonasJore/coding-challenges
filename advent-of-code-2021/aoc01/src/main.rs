@@ -44,7 +44,7 @@ fn main() {
 }
 
 #[test]
-fn will_count_increases_in_depth() {
+fn count_increases_in_depth() {
     let data = vec![1, 2, 3, 4];
     let under_test = count_increased_depths(&data);
     assert_eq!(under_test, 3);
