@@ -1,6 +1,5 @@
 use std::fs;
 
-#[derive(Debug)]
 struct Navigateur {
     direction: String,
     distance: u32,
@@ -44,7 +43,7 @@ fn solution_part_1(vector: &[Navigateur]) {
     println!("Final position of sub: {}", distance * depth);
 }
 
-fn solution_part_2(vector: &[Navigateur]) {
+fn solution_part_2(_vector: &[Navigateur]) {
     println!("{}", "TODO");
 }
 
