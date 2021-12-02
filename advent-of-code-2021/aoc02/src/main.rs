@@ -32,15 +32,15 @@ fn read_file() -> Vec<Navigateur> {
 fn solution_part_1(vector: &[Navigateur]) {
     let mut depth: u32 = 0;
     let mut distance: u32 = 0;
-    
-    vector.iter().for_each(|navi| {
-        match navi.direction.as_ref() {
+
+    vector
+        .iter()
+        .for_each(|navi| match navi.direction.as_ref() {
             FORWARD => distance += navi.distance,
             DOWN => depth += navi.distance,
             UP => depth -= navi.distance,
             _ => print!("unknown input"),
-        }
-    });
+        });
     println!("Final position of sub: {}", distance * depth);
 }
 
