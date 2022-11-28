@@ -1,0 +1,1 @@
+C:\Users\jonas\code\coding-challenges\advent-of-code-2022\build\classes\kotlin\main\MainKt.class;C:\Users\jonas\code\coding-challenges\advent-of-code-2022\build\classes\kotlin\main\day01\Day01.class;C:\Users\jonas\code\coding-challenges\advent-of-code-2022\build\classes\kotlin\main\util\ReadFileKt.class

@@ -3,3 +3,6 @@ target/
 #editor
 .vscode
 __pycache__/
+#intellij
+build/
+.idea/
