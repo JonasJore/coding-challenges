@@ -1,8 +1,9 @@
-#rust 
+#rust
 target/
 #editor
 .vscode
 __pycache__/
 #intellij
 build/
+advent-of-code-2022/build/
 .idea/

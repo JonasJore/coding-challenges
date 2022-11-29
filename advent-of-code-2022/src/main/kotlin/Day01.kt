@@ -1,5 +1,3 @@
-package day01
-
 import util.readInputToArr
 
 internal class Day01 {
