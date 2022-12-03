@@ -1,9 +1,9 @@
 import util.readInputToArr
 
-internal class Day01 {
+internal class Day01 : DayInAdvent {
     private var input: List<String> = readInputToArr("day01_input.txt")
 
-    fun part1(): Int {
+    override fun part1(): String {
         var maxCalories = 0
         val food = mutableListOf<Int>()
         for (line in input) {
@@ -16,10 +16,10 @@ internal class Day01 {
                 food.add(line.toInt())
             }
         }
-        return maxCalories
+        return maxCalories.toString()
     }
 
-    fun part2(): Int {
+    override fun part2(): String {
         val maxCalories = mutableListOf<Int>()
         val food = mutableListOf<Int>()
 
@@ -31,6 +31,6 @@ internal class Day01 {
                 food.add(line.toInt())
             }
         }
-        return maxCalories.sortedDescending().take(3).sum()
+        return maxCalories.sortedDescending().take(3).sum().toString()
     }
 }
