@@ -1,6 +1,6 @@
 import util.readInputToArr
 
-internal class Day03: DayInAdvent {
+internal class Day03 {
     private val input: List<String> = readInputToArr("day03_input.txt")
     private val priorities = "_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -14,7 +14,7 @@ internal class Day03: DayInAdvent {
         return common.joinToString("")
     }
 
-    override fun part1(): String {
+    fun part1(): String {
         val rucksacksWithCompartments =
             input.map {
                 commonElements(
@@ -34,7 +34,7 @@ internal class Day03: DayInAdvent {
         return priorityPerEntry.sum().toString()
     }
 
-    override fun part2(): String {
+    fun part2(): String {
         val priorityOfItemPerGroup = input
             .chunked(3)
             .map { item ->
