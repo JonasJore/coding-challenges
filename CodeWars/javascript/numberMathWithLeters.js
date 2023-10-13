@@ -1,3 +1,5 @@
+// https://www.codewars.com/kata/5782dd86202c0e43410001f6/javascript
+
 function doMath(string) {
   const letters = 'abcdefghijklmnopqrstuvwxyz';
 
