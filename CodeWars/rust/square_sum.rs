@@ -1,3 +1,5 @@
+// https://www.codewars.com/kata/515e271a311df0350d00000f/rust
+
 fn square_sum(vec: Vec<i32>) -> i32 {
     return vec.into_iter().map(|num| num.pow(2)).sum();
 }
