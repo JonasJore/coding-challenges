@@ -1,3 +1,5 @@
+// https://www.codewars.com/kata/54c27a33fb7da0db0100040e/train/rust
+
 fn is_square(n: i64) -> bool {
     let result: fn(i64) -> bool = |d| {
         let sqrt = (d as f64).sqrt();
