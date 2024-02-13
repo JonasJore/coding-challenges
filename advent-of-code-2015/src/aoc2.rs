@@ -33,33 +33,33 @@ fn ribbon_to_order(present: &str) -> i32 {
         .map(|&side| side.parse::<i32>().unwrap())
         .collect();
 
-    // let mut smallest = meassuresi32[0];
-    // let mut next_smallest = meassuresi32[1];
+    let mut smallest = meassuresi32[0];
+    let mut next_smallest = meassuresi32[1];
 
-    // if meassuresi32[1] < meassuresi32[0] {
-    //     smallest = meassuresi32[1];
-    //     next_smallest = meassuresi32[0];
-    // }
+    if meassuresi32[1] < meassuresi32[0] {
+        smallest = meassuresi32[1];
+        next_smallest = meassuresi32[0];
+    }
 
-    // if meassuresi32[2] < smallest {
-    //     next_smallest = smallest;
-    //     smallest = meassuresi32[2];
-    // } else if meassuresi32[2] < next_smallest {
-    //     next_smallest = meassuresi32[2];
-    // }
+    if meassuresi32[2] < smallest {
+        next_smallest = smallest;
+        smallest = meassuresi32[2];
+    } else if meassuresi32[2] < next_smallest {
+        next_smallest = meassuresi32[2];
+    }
 
-    let (smallest, next_smallest) =
-        meassuresi32
-            .iter()
-            .fold((i32::MAX, i32::MAX), |(sm, sm2), &val| {
-                if val < sm {
-                    (val, sm)
-                } else if val < sm2 {
-                    (sm, val)
-                } else {
-                    (sm, sm2)
-                }
-            });
+    // let (smallest, next_smallest) =
+    //     meassuresi32
+    //         .iter()
+    //         .fold((i32::MAX, i32::MAX), |(sm, sm2), &val| {
+    //             if val < sm {
+    //                 (val, sm)
+    //             } else if val < sm2 {
+    //                 (sm, val)
+    //             } else {
+    //                 (sm, sm2)
+    //             }
+    //         });
 
     let feat = smallest * 2 + next_smallest * 2;
     let bow = meassuresi32[0] * meassuresi32[1] * meassuresi32[2];
