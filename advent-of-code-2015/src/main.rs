@@ -41,5 +41,5 @@ fn main() {
     aoc_01_part_1();
     aoc_01_part_2();
 
-    aoc2::aoc_02_part_1();
+    aoc2::answer();
 }
