@@ -1,3 +1,5 @@
+mod aoc2;
+mod util;
 use std::fs;
 
 fn aoc_01_part_1() {
@@ -38,4 +40,6 @@ fn aoc_01_part_2() {
 fn main() {
     aoc_01_part_1();
     aoc_01_part_2();
+
+    aoc2::aoc_02_part_1();
 }
